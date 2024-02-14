@@ -1,4 +1,5 @@
 body {
+    font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
@@ -47,6 +48,48 @@ h2 {
     font-size: 2rem;
 }
 
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: calc(33.333% - 10px);
+}
+
+.brand {
+    margin: 0;
+}
+
+.name {
+    margin: 10px 0;
+}
+
+.price {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.sizes {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+}
 
 .navbar {
     background-color: lightgrey;
