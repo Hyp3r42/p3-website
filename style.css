@@ -10,11 +10,11 @@ header, .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 40px; /* Verdubbelde padding */
 }
 
 header a img, .navbar img {
-    height: 50px;
+    height: 100px; /* Verdubbelde hoogte van de afbeeldingen */
 }
 
 nav ul, .navbar ul {
@@ -25,7 +25,7 @@ nav ul, .navbar ul {
 }
 
 nav li, .navbar li {
-    margin-right: 20px;
+    margin-right: 40px; /* Verdubbelde afstand tussen de lijstitems */
 }
 
 nav a, .navbar a {
@@ -47,15 +47,6 @@ h2 {
     font-size: 2rem;
 }
 
-footer, .navbar {
-    text-align: center;
-    padding: 3px;
-}
-
-footer {
-    background-color: DarkSalmon;
-    color: white;
-}
 
 .navbar {
     background-color: lightgrey;
