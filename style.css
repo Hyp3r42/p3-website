@@ -79,18 +79,7 @@ h2 {
     margin: 10px 0;
 }
 
-@media (max-width: 768px) {
-    .product {
-        width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 480px) {
-    .product {
-        width: 100%;
-    }
-}
-
+/* Overgenomen van de tweede CSS-stijl */
 .navbar {
     background-color: lightgrey;
     color: #000;
