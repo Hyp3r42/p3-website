@@ -1,86 +1,119 @@
+/* Algemene stijlen voor de pagina */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Lettertype instellen */
+    margin: 0; /* Marges verwijderen */
+    padding: 0; /* Padding verwijderen */
 }
 
-header, .navbar {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px; /* Verdubbelde padding */
+/* Stijlen voor de headersectie */
+header {
+    background-color: #333; /* Achtergrondkleur instellen */
+    color: white; /* Tekstkleur instellen */
+    padding: 10px 20px; /* Binnenste opvulling instellen */
+    display: flex; /* Flexbox lay-out gebruiken */
+    justify-content: space-between; /* Inhoud gelijkmatig over de breedte verdelen */
+    align-items: center; /* Inhoud verticaal centreren */
 }
 
-header a img, .navbar img {
-    height: 100px; /* Verdubbelde hoogte van de afbeeldingen */
+header nav ul {
+    list-style-type: none; /* Opsommingsteken verwijderen */
+    margin: 0; /* Marges verwijderen */
+    padding: 0; /* Padding verwijderen */
 }
 
-nav ul, .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+header nav ul li {
+    display: inline; /* Inline weergeven */
+    margin-left: 20px; /* Linkermarge toevoegen tussen navigatie-items */
 }
 
-nav li, .navbar li {
-    margin-right: 40px; /* Verdubbelde afstand tussen de lijstitems */
+header nav ul li a {
+    text-decoration: none; /* Onderstreping verwijderen */
+    color: white; /* Tekstkleur instellen */
 }
 
-nav a, .navbar a {
-    color: #fff;
-    text-decoration: none;
+/* Stijlen voor de hoofdinhoud */
+main section {
+    margin-top: 20px; /* Bovenmarge toevoegen aan secties */
+    color: white;
 }
 
+main section h2 {
+    margin-bottom: 10px; /* Ondermarge toevoegen aan koppen */
+}
+
+/* Stijlen voor de navigatiebalk */
+nav ul {
+    list-style-type: none; /* Opsommingsteken verwijderen */
+    margin: 0; /* Marges verwijderen */
+    padding: 0; /* Padding verwijderen */
+    background-color: #333; /* Achtergrondkleur instellen */
+    color: white; /* Tekstkleur instellen */
+    display: flex; /* Flexbox lay-out gebruiken */
+    justify-content: center; /* Inhoud centreren */
+    align-items: center; /* Inhoud verticaal centreren */
+}
+
+nav ul li {
+    margin: 0 10px; /* Binnenmarge toevoegen tussen navigatie-items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Onderstreping verwijderen */
+    color: white; /* Tekstkleur instellen */
+}
+
+nav ul li a:hover {
+    color: white; /* Tekstkleur instellen tijdens hover */
+}
+
+/* Stijlen voor de secties in de hoofdinhoud */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1200px; /* Maximale breedte instellen */
+    margin: 0 auto; /* Middelste uitlijning */
+    padding: 20px; /* Binnenste opvulling instellen */
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3rem; /* Lettergrootte instellen */
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Lettergrootte instellen */
 }
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex; /* Flexbox lay-out gebruiken */
+    flex-wrap: wrap; /* Inhoud laten inspringen bij overloop */
+    justify-content: space-between; /* Inhoud gelijkmatig over de breedte verdelen */
 }
 
 .product {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
-    width: calc(33.333% - 10px);
+    border: 1px solid #ccc; /* Rand toevoegen rond producten */
+    border-radius: 5px; /* Randen afronden */
+    padding: 15px; /* Binnenste opvulling instellen */
+    margin-bottom: 20px; /* Ondermarge toevoegen aan producten */
+    width: calc(33.333% - 10px); /* Breedte instellen voor producten */
 }
 
 .brand {
-    margin: 0;
+    margin: 0; /* Marges verwijderen */
 }
 
 .name {
-    margin: 10px 0;
+    margin: 10px 0; /* Binnenmarge instellen voor productnamen */
 }
 
 .price {
-    margin: 10px 0;
-    font-weight: bold;
+    margin: 10px 0; /* Binnenmarge instellen voor prijzen */
+    font-weight: bold; /* Vetgedrukte tekst */
 }
 
 .sizes {
-    margin: 10px 0;
+    margin: 10px 0; /* Binnenmarge instellen voor maten */
 }
 
-/* Overgenomen van de tweede CSS-stijl */
+/* Overgenomen stijlen van de tweede CSS-stijl */
 .navbar {
-    background-color: lightgrey;
-    color: #000;
+    background-color: lightgrey; /* Achtergrondkleur instellen */
+    color: #000; /* Tekstkleur instellen */
 }
