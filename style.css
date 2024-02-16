@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif; /* Lettertype instellen */
     margin: 0; /* Marges verwijderen */
     padding: 0; /* Padding verwijderen */
+    background-color: white;
 }
 
 /* Stijlen voor de headersectie */
@@ -54,7 +55,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 10px; /* Binnenmarge toevoegen tussen navigatie-items */
+    margin: 0 5px; /* Binnenmarge toevoegen tussen navigatie-items */
 }
 
 nav ul li a {
@@ -114,6 +115,37 @@ h2 {
 
 /* Overgenomen stijlen van de tweede CSS-stijl */
 .navbar {
-    background-color: lightgrey; /* Achtergrondkleur instellen */
+    background-color: white; /* Achtergrondkleur instellen */
     color: #000; /* Tekstkleur instellen */
+}
+
+.product {
+    width: calc(33.333% - 20px); /* Breedte instellen voor drie kolommen met 20px ruimte tussen */
+    margin-bottom: 20px;
+    text-align: center; /* Tekst centreren */
+}
+
+.product img {
+    display: block;
+    max-width: 100%; /* Afbeelding schaalt met de container */
+    height: auto; /* Behoudt de aspectverhouding van de afbeelding */
+    border-radius: 5px; /* Randen afronden */
+}
+
+.brand {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.name {
+    margin: 5px 0; /* Marge aanpassen voor naam */
+}
+
+.price {
+    margin: 5px 0; /* Marge aanpassen voor prijs */
+    font-weight: bold;
+}
+
+.sizes {
+    margin: 5px 0; /* Marge aanpassen voor maten */
 }
