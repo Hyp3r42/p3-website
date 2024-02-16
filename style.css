@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif; /* Lettertype instellen */
     margin: 0; /* Marges verwijderen */
     padding: 0; /* Padding verwijderen */
-    background-color: white;
+    background-color: white; /* Achtergrondkleur instellen */
 }
 
 /* Stijlen voor de headersectie */
@@ -35,7 +35,7 @@ header nav ul li a {
 /* Stijlen voor de hoofdinhoud */
 main section {
     margin-top: 20px; /* Bovenmarge toevoegen aan secties */
-    color: white;
+    color: white; /* Tekstkleur instellen */
 }
 
 main section h2 {
@@ -46,7 +46,7 @@ main section h2 {
 nav ul {
     list-style-type: none; /* Opsommingsteken verwijderen */
     margin: 0; /* Marges verwijderen */
-    padding: 0; /* Padding verwijderen */
+    padding: 0; /* Kleinere padding instellen */
     background-color: #333; /* Achtergrondkleur instellen */
     color: white; /* Tekstkleur instellen */
     display: flex; /* Flexbox lay-out gebruiken */
@@ -89,39 +89,8 @@ h2 {
 }
 
 .product {
-    border: 1px solid #ccc; /* Rand toevoegen rond producten */
-    border-radius: 5px; /* Randen afronden */
-    padding: 15px; /* Binnenste opvulling instellen */
-    margin-bottom: 20px; /* Ondermarge toevoegen aan producten */
-    width: calc(33.333% - 10px); /* Breedte instellen voor producten */
-}
-
-.brand {
-    margin: 0; /* Marges verwijderen */
-}
-
-.name {
-    margin: 10px 0; /* Binnenmarge instellen voor productnamen */
-}
-
-.price {
-    margin: 10px 0; /* Binnenmarge instellen voor prijzen */
-    font-weight: bold; /* Vetgedrukte tekst */
-}
-
-.sizes {
-    margin: 10px 0; /* Binnenmarge instellen voor maten */
-}
-
-/* Overgenomen stijlen van de tweede CSS-stijl */
-.navbar {
-    background-color: white; /* Achtergrondkleur instellen */
-    color: #000; /* Tekstkleur instellen */
-}
-
-.product {
     width: calc(33.333% - 20px); /* Breedte instellen voor drie kolommen met 20px ruimte tussen */
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Ondermarge toevoegen aan producten */
     text-align: center; /* Tekst centreren */
 }
 
@@ -133,19 +102,19 @@ h2 {
 }
 
 .brand {
-    margin: 10px 0;
-    font-weight: bold;
+    margin: 10px 0; /* Binnenmarge instellen voor merk */
+    font-weight: bold; /* Vetgedrukte tekst */
 }
 
 .name {
-    margin: 5px 0; /* Marge aanpassen voor naam */
+    margin: 5px 0; /* Binnenmarge instellen voor naam */
 }
 
 .price {
-    margin: 5px 0; /* Marge aanpassen voor prijs */
-    font-weight: bold;
+    margin: 5px 0; /* Binnenmarge instellen voor prijs */
+    font-weight: bold; /* Vetgedrukte tekst */
 }
 
 .sizes {
-    margin: 5px 0; /* Marge aanpassen voor maten */
+    margin: 5px 0; /* Binnenmarge instellen voor maten */
 }

@@ -4,16 +4,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<header>
-        <a href="Home page.html"><img src="./img/_5a711cdd-209d-436a-89db-4469bc09ab7f.jpeg" alt="PEAK logo" width="100"></a>
-        <nav>
-            <ul>
-                <li><a href="login.php">Inloggen</a></li>
-                <li><a href="">|</a></li>
-                <li><a href="">Klantenservice</a></li>
-            </ul>
-        </nav>
-    </header>
     <div class="products">
     <?php
     // Define the product information
