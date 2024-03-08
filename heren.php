@@ -10,7 +10,7 @@
             <ul>
                 <li><a href="login.php">Inloggen</a></li>
                 <li><a href="">|</a></li>
-                <li><a href=""> Klantenservice </a></li>
+                <li><a href="">Klantenservice </a></li>
             </ul>
         </nav>
     </header>
