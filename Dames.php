@@ -17,7 +17,7 @@
     ];
 
     // Loop through each product and generate HTML
-    foreach ($products as $product) {
+    foreach ($products as $product)  {
         echo '<div class="product">';
         echo '<a href=""><img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px"></a>';
         echo '<h2 class="brand">PEAK</h2>';
