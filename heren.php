@@ -16,6 +16,8 @@
     </header>
     <div class="products">
     <?php
+    include "connectpdo.php";
+    
     // Define the product information
     $products = [
         ["name" => "Peak adidas sneaker white", "price" => "€129,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "_f6d0ac54-7c9e-46e8-9c54-e3d226625aa1.jpeg"],

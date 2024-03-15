@@ -8,6 +8,8 @@
 <body>
 
 <?php
+include "connectpdo.php";
+
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Controleer gebruikersnaam en wachtwoord (hier gewoon voorbeeld, je moet dit vervangen door echte authenticatie)
