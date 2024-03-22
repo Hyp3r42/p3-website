@@ -1,24 +1,22 @@
-<!-- index.php -->
 <?php
 require_once 'functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["add"])) {
-        $name = $_POST["name"];
-        $age = $_POST["age"];
-        add_record(["name" => $name, "age" => $age]);
-    } elseif (isset($_POST["update"])) {
-        $index = $_POST["index"];
-        $name = $_POST["name"];
-        $age = $_POST["age"];
-        update_record($index, ["name" => $name, "age" => $age]);
-    } elseif (isset($_POST["delete"])) {
-        $index = $_POST["index"];
-        delete_record($index);
+    if (isset($_POST["add_klant"])) {
+        $naam = $_POST["naam"];
+        $email = $_POST["email"];
+        $sql = "INSERT INTO klant (naam, email) VALUES ('$naam', '$email')";
+        $result = $conn->query($sql);
+    } elseif (isset($_POST["add_bestelling"])) {
+        $klant_id = $_POST["klant_id"];
+        $product_id = $_POST["product_id"];
+        $hoeveelheid = $_POST["hoeveelheid"];
+        add_bestelling($klant_id, $product_id, $hoeveelheid);
     }
 }
 
-$records = get_records();
+$klanten = get_klanten();
+$producten = get_producten();
 ?>
 
 <!DOCTYPE html>
@@ -26,28 +24,44 @@ $records = get_records();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD in PHP met bestanden</title>
+    <title>CRUD Webshop in PHP</title>
 </head>
 <body>
-    <h1>Records</h1>
+    <h1>Klanten</h1>
     <ul>
-        <?php foreach ($records as $index => $record): ?>
-            <li>
-                <?php echo "Naam: " . $record->name . ", Leeftijd: " . $record->age; ?>
-                <form method="post">
-                    <input type="hidden" name="index" value="<?php echo $index; ?>">
-                    <input type="submit" name="edit" value="Bewerk">
-                    <input type="submit" name="delete" value="Verwijder">
-                </form>
-            </li>
+        <?php foreach ($klanten as $klant): ?>
+            <li><?php echo $klant["naam"]; ?> (<?php echo $klant["email"]; ?>)</li>
         <?php endforeach; ?>
     </ul>
 
-    <h2>Voeg Record Toe</h2>
+    <h2>Producten</h2>
+    <ul>
+        <?php foreach ($producten as $product): ?>
+            <li><?php echo $product["naam"]; ?> - €<?php echo $product["prijs"]; ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h2>Voeg Klant Toe</h2>
     <form method="post">
-        Naam: <input type="text" name="name"><br>
-        Leeftijd: <input type="text" name="age"><br>
-        <input type="submit" name="add" value="Toevoegen">
+        Naam: <input type="text" name="naam"><br>
+        Email: <input type="text" name="email"><br>
+        <input type="submit" name="add_klant" value="Toevoegen">
+    </form>
+
+    <h2>Voeg Bestelling Toe</h2>
+    <form method="post">
+        Klant: <select name="klant_id">
+            <?php foreach ($klanten as $klant): ?>
+                <option value="<?php echo $klant["id"]; ?>"><?php echo $klant["naam"]; ?></option>
+            <?php endforeach; ?>
+        </select><br>
+        Product: <select name="product_id">
+            <?php foreach ($producten as $product): ?>
+                <option value="<?php echo $product["id"]; ?>"><?php echo $product["naam"]; ?></option>
+            <?php endforeach; ?>
+        </select><br>
+        Hoeveelheid: <input type="text" name="hoeveelheid"><br>
+        <input type="submit" name="add_bestelling" value="Toevoegen">
     </form>
 </body>
 </html>
