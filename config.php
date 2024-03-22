@@ -1,4 +1,12 @@
-<!-- config.php -->
 <?php
-$database_file = 'data.txt'; // Bestandsnaam voor opslag van gegevens
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "webshop";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 ?>
