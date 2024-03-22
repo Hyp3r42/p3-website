@@ -1,45 +1,34 @@
-<?php
-require_once 'functions.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["add_klant"])) {
-        $naam = $_POST["naam"];
-        $email = $_POST["email"];
-        $sql = "INSERT INTO klant (naam, email) VALUES ('$naam', '$email')";
-        $result = $conn->query($sql);
-    } elseif (isset($_POST["add_bestelling"])) {
-        $klant_id = $_POST["klant_id"];
-        $product_id = $_POST["product_id"];
-        $hoeveelheid = $_POST["hoeveelheid"];
-        add_bestelling($klant_id, $product_id, $hoeveelheid);
-    }
-}
-
-$klanten = get_klanten();
-$producten = get_producten();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cstyle.css">
     <title>CRUD Webshop in PHP</title>
 </head>
 <body>
     <h1>Klanten</h1>
     <ul>
-        <?php foreach ($klanten as $klant): ?>
-            <li><?php echo $klant["naam"]; ?> (<?php echo $klant["email"]; ?>)</li>
-        <?php endforeach; ?>
+        <?php if (!empty($klanten)): ?>
+            <?php foreach ($klanten as $klant): ?>
+                <li><?php echo $klant["naam"]; ?> (<?php echo $klant["email"]; ?>)</li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>Geen klanten gevonden</li>
+        <?php endif; ?>
     </ul>
 
     <h2>Producten</h2>
-    <ul>
+<ul>
+    <?php if (!empty($producten)): ?>
         <?php foreach ($producten as $product): ?>
             <li><?php echo $product["naam"]; ?> - €<?php echo $product["prijs"]; ?></li>
         <?php endforeach; ?>
-    </ul>
+    <?php else: ?>
+        <li>Geen producten gevonden</li>
+    <?php endif; ?>
+</ul>
+
 
     <h2>Voeg Klant Toe</h2>
     <form method="post">
