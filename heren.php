@@ -18,12 +18,13 @@
 <?php
 include "connectpdo.php";
 
+
 // Define the product information
 $products = [
-    ["name" => "Peak adidas sneaker white", "price" => "€129,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_f6d0ac54-7c9e-46e8-9c54-e3d226625aa1.jpeg"],
+    ["name" => "Peak adidas sneaker white", "price" => "€129,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_f6d0ac54-7c9e-46e8-9c54-e3d226625aa1-removebg-preview.png"],
     ["name" => "Peak phantom", "price" => "€199,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_4db56e6b-01b3-41d1-bfc7-5f9b3fa660fe.jpeg"],
     ["name" => "Peak sneaker black", "price" => "€49,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_f4fe6d71-954c-4a5b-b887-42768475cf83.jpeg"],
-    ["name" => "Peak sneaker", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/_e4ed7742-392d-4718-a7a1-d0f2f4b2f221.jpeg"],
+    ["name" => "Peak sneaker", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/_e4ed7742-392d-4718-a7a1-d0f2f4b2f221-removebg-preview.png"],
     ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/_46c37e2e-c554-4c25-be68-b2ce350134ab.jpeg"],
     ["name" => "Peak sneaker green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_ca509a72-502d-480f-8847-4c11246929b4.jpeg"]
 ];
