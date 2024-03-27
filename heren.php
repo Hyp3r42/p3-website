@@ -21,12 +21,13 @@ include "connectpdo.php";
 
 // Define the product information
 $products = [
-    ["name" => "Peak adidas sneaker white", "price" => "€129,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (1).webp"],
-    ["name" => "Peak phantom", "price" => "€199,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (2).webp"],
-    ["name" => "Peak sneaker black", "price" => "€49,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (3).webp"],
-    ["name" => "Peak sneaker", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/_e4ed7742-392d-4718-a7a1-d0f2f4b2f221-removebg-preview.png"],
-    ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/_46c37e2e-c554-4c25-be68-b2ce350134ab-removebg-preview.png"],
-    ["name" => "Peak sneaker green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1.webp"]
+    ["name" => "Nike Dunk High Blac White", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (1).webp"],
+    ["name" => "Nike Air Force 1 Low Grey", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (2).webp"],
+    ["name" => "Air Jordan 2 retro Low ", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (3).webp"],
+    ["name" => "Nike Dunk Low Retro White Black", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (5).webp"],
+    ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (6).webp"],
+    ["name" => "Nike Air Max 90 Scream Green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1.webp"],
+    ["name" => "Nike Air FOrce 1 Low", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (11).webp"],
 ];
 
 // Loop through each product and generate HTML
