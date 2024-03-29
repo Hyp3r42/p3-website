@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
 <html>
 <head>
     <title>Schoenwinkel Bestellingen</title>
+    <link rel="stylesheet" href="ccstyle.css">
 </head>
 <body>
     <h2>Nieuwe bestelling toevoegen:</h2>
