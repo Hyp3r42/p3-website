@@ -31,7 +31,7 @@ $products = [
     ["name" => "Yeezy Boost 350 V2 Core Black Red", "price" => "€250", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (7).webp"],
     ["name" => "Yeezy Slide Onyx", "price" => "€185", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (8).webp"],
     ["name" => "Yeezy 500 Salt", "price" => "€395", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (9).webp"],
-    ["name" => "Peak adidas sneaker grey", "price" => "€574", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (10).webp],
+    ["name" => "Yeezy 450 Stone Flax", "price" => "€574", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (10).webp"],
 ];
 
 // Loop through each product and generate HTML
