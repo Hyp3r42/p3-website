@@ -29,7 +29,7 @@ $products = [
     ["name" => "Yeezy Boost 350 V2 Yeezreel", "price" => "€260", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (5).webp"],
     ["name" => "Yeezy Boost 700 V1 Faded Azure", "price" => "€349", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (6).webp"],
     ["name" => "Yeezy Boost 350 V2 Core Black Red", "price" => "€250", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (7).webp"],
-    ["name" => "Air Jordan 2 retro Low ", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (8).webp"],
+    ["name" => "Air Jordan 2 retro Low ", "price" => "€185", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (8).webp"],
     ["name" => "Nike Dunk Low Retro White Black", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (9).webp"],
     ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (10).webp"],
     ["name" => "Nike Air Max 90 Scream Green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (11).webp"],
