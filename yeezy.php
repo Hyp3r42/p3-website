@@ -25,7 +25,7 @@ $products = [
     ["name" => "Yeezy Slide Resin", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (1).webp"],
     ["name" => "Yeezy Boost 350 V2 Dazzling Blue", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (2).webp"],
     ["name" => "Yeezy Boost 700 V1 Wave Runner", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (3).webp"],
-    ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (4).webp"],
+    ["name" => "Yeezy Foam RNNR Stone Stage", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (4).webp"],
     ["name" => "Nike Air Max 90 Scream Green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1.webp"],
     ["name" => "Nike Air FOrce 1 Low", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (6).webp"],
     ["name" => "Nike Air Force 1 Low Grey", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (7).webp"],
