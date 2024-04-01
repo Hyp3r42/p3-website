@@ -32,9 +32,6 @@ $products = [
     ["name" => "Yeezy Slide Onyx", "price" => "€185", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (8).webp"],
     ["name" => "Nike Dunk Low Retro White Black", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (9).webp"],
     ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (10).webp"],
-    ["name" => "Nike Air Max 90 Scream Green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/1 (11).webp"],
-    ["name" => "Nike Air FOrce 1 Low", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (12).webp"],
-    ["name" => "Nike Air FOrce 1 Low", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img/1 (13).webp"],
 ];
 
 // Loop through each product and generate HTML
