@@ -11,7 +11,7 @@
     // Define the product information
     $products = [
         ["name" => "Nike Air Max 90 Scream Green", "price" => "€178", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (11).webp"],
-        ["name" => "Peak phantom", "price" => "€199,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_4db56e6b-01b3-41d1-bfc7-5f9b3fa660fe.jpeg"],
+        ["name" => "Peak phantom", "price" => "€199,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (12).webp"],
         ["name" => "Peak sneaker black", "price" => "€49,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_f4fe6d71-954c-4a5b-b887-42768475cf83.jpeg"],
         ["name" => "Peak sneaker", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "sneaker.jpg"],
         ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "grey.jpg"],
