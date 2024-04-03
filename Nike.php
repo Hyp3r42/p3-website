@@ -13,8 +13,8 @@
         ["name" => "Nike Air Max 90 Scream Green", "price" => "€178", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (11).webp"],
         ["name" => "Nike Dunk High Game Royal", "price" => "€161", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (12).webp"],
         ["name" => "Nike Dunk Low SE Copper Swoosh", "price" => "€129", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (13).webp"],
-        ["name" => "Peak sneaker", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "sneaker.jpg"],
-        ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "grey.jpg"],
+        ["name" => "Nike Dunk Low Hyper Cobalt", "price" => "€184", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img nike/1 (14).webp"],
+        ["name" => "Nike SB Dunk High Green Suede", "price" => "€195", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img nike/1 (15).webp"],
         ["name" => "Peak sneaker green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "green.jpg"]
     ];
 
