@@ -1,16 +1,6 @@
 <?php
-// Database configuratie
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "webshop";
 
-// Verbinding maken met de database
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include 'config.php';
 // CRUD-operaties
 
 // Create
