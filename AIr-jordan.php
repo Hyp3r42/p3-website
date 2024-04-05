@@ -16,16 +16,19 @@
     </header>
     <div class="products">
     <?php
-    include "connectpdo.php";
+    include "config.php";
     
     // Define the product information
     $products = [
-        ["name" => "Peak adidas sneaker white", "price" => "€129,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "_img/_dfedbc6b-4c9d-4936-875c-29650e886e1b.jpeg"],
-        ["name" => "Peak phantom", "price" => "€199,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_4db56e6b-01b3-41d1-bfc7-5f9b3fa660fe.jpeg"],
-        ["name" => "Peak sneaker black", "price" => "€49,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img/_f4fe6d71-954c-4a5b-b887-42768475cf83.jpeg"],
-        ["name" => "Peak sneaker", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "sneaker.jpg"],
-        ["name" => "Peak adidas sneaker grey", "price" => "€149,99", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "grey.jpg"],
-        ["name" => "Peak sneaker green", "price" => "€149,99", "sizes" => ["42", "43", "44", "45", "46"], "image" => "green.jpg"]
+        ["name" => "Air Jordan 1 Low Noble Red", "price" => "€250", "sizes" => [], "image" => "img air jordan/1 (19).webp"],
+        ["name" => "Air Jordan 1 Mid Blue Mint", "price" => "€252", "sizes" => [], "image" => "img air jordan/1 (20).webp"],
+        ["name" => "Air Jordan 1 Retro Hight OG True Blue", "price" => "€208", "sizes" => [], "image" => "img air jordan/1 (21).webp"],
+        ["name" => "Air Jordan 1 Low Reverse Bred", "price" => "€126", "sizes" => [], "image" => "img air jordan/1 (22).webp"],
+        ["name" => "Air Jordan 1 Retro High Light Smoke Grey", "price" => "€250", "sizes" => [], "image" => "img air jordan/1 (23).webp"],
+        ["name" => "Air Jordan 1 Retro High OG Yellow Toe", "price" => "€220", "sizes" => [], "image" => "img air jordan/1 (24).webp"],
+        ["name" => "Air Jordan 1 Mid Mulit Patent", "price" => "€349", "sizes" => [], "image" => "img air jordan/1 (25).webp"],
+        ["name" => "Air Jordan 1 Retro Hight Royal Toe", "price" => "€297", "sizes" => [], "image" => "img air jordan/1 (26).webp"],
+        ["name" => "Air Jordan 7 Retro Greater China", "price" => "€204", "sizes" => [], "image" => "img air jordan/1 (27).webp"],
     ];
 
     // Loop through each product and generate HTML

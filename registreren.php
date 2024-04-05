@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Registreren</title>
 </head>
 <body>
 
 <?php
-include "config.php";
+include 'config.php';
 
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 
 <h2>Aanmelden</h2>
-<p>Nog geen account? <a href="register.php">Registreer hier</a>.</p>
+<p>Nog geen account? <a href="registreren.php">Registreer hier</a>.</p>
 
 </body>
 </html>

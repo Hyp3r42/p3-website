@@ -21,14 +21,14 @@ include "connectpdo.php";
 
 // Define the product information
 $products = [
-    ["name" => "Yeezy Boost 350 V2 Linen", "price" => "€333", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1.webp"],
-    ["name" => "Yeezy Slide Resin", "price" => "€181", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (1).webp"],
-    ["name" => "Yeezy Boost 350 V2 Dazzling Blue", "price" => "€323", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (2).webp"],
-    ["name" => "Yeezy Boost 700 V1 Wave Runner", "price" => "€497", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (3).webp"],
-    ["name" => "Yeezy Foam RNNR Stone Stage", "price" => "€257", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (4).webp"],
-    ["name" => "Yeezy Boost 350 V2 Yeezreel", "price" => "€260", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (5).webp"],
-    ["name" => "Yeezy Boost 700 V1 Faded Azure", "price" => "€349", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img yzy/1 (6).webp"],
-    ["name" => "Yeezy Boost 350 V2 Core Black Red", "price" => "€250", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img yzy/1 (7).webp"],
+    ["name" => "Yeezy Boost 350 V2 Linen", "price" => "€333", "sizes" => [], "image" => "img yzy/1.webp"],
+    ["name" => "Yeezy Slide Resin", "price" => "€181", "sizes" => [], "image" => "img yzy/1 (1).webp"],
+    ["name" => "Yeezy Boost 350 V2 Dazzling Blue", "price" => "€323", "sizes" => [], "image" => "img yzy/1 (2).webp"],
+    ["name" => "Yeezy Boost 700 V1 Wave Runner", "price" => "€497", "sizes" => [], "image" => "img yzy/1 (3).webp"],
+    ["name" => "Yeezy Foam RNNR Stone Stage", "price" => "€257", "sizes" => [], "image" => "img yzy/1 (4).webp"],
+    ["name" => "Yeezy Boost 350 V2 Yeezreel", "price" => "€260", "sizes" => [], "image" => "img yzy/1 (5).webp"],
+    ["name" => "Yeezy Boost 700 V1 Faded Azure", "price" => "€349", "sizes" => [], "image" => "img yzy/1 (6).webp"],
+    ["name" => "Yeezy Boost 350 V2 Core Black Red", "price" => "€250", "sizes" => [], "image" => "img yzy/1 (7).webp"],
 ];
 
 // Loop through each product and generate HTML

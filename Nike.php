@@ -6,7 +6,7 @@
 <body>
     <div class="products">
     <?php
-    include "connectpdo.php";
+    include "config.php";
     
     // Define the product information
     $products = [
@@ -16,7 +16,9 @@
         ["name" => "Nike Dunk Low Hyper Cobalt", "price" => "€184", "sizes" => [], "image" => "img nike/1 (14).webp"],
         ["name" => "Nike SB Dunk High Green Suede", "price" => "€195", "sizes" => [], "image" => "img nike/1 (15).webp"],
         ["name" => "Nike Dunk Low College Navy", "price" => "€268", "sizes" => [], "image" => "img nike/1 (16).webp"],
-        ["name" => "Nike Air Max 90 SE Animal White", "price" => "€268", "sizes" => [], "image" => "img nike/1 (17).webp"],
+        ["name" => "Nike Air Max 90 SE Animal White", "price" => "€159", "sizes" => [], "image" => "img nike/1 (17).webp"],
+        ["name" => "Nike Dunk Hight Moon Fossil", "price" => "€168", "sizes" => [], "image" => "img nike/1 (18).webp"],
+        ["name" => "Nike Dunk Low EMB NBA 75th Anniversaryl", "price" => "€186", "sizes" => [], "image" => "img nike/1 (28).webp"],
     ];
 
     // Loop through each product and generate HTML
