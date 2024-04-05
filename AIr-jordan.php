@@ -31,15 +31,18 @@
         ["name" => "Air Jordan 7 Retro Greater China", "price" => "€204", "sizes" => [], "image" => "img air jordan/1 (27).webp"],
     ];
 
-    // Loop through each product and generate HTML
-    foreach ($products as $product) {
-        echo '<div class="product">';
-        echo '<a href=""><img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px"></a>';
-        echo '<h2 class="brand">PEAK</h2>';
-        echo '<h3 class="name">' . $product['name'] . '</h3>';
-        echo '<p class="price">' . $product['price'] . '</p>';
-        echo '<p class="sizes">' . implode(" ", $product['sizes']) . '</p>';
-        echo '</div>';
+  // Loop through each product and generate HTML
+  foreach ($products as $product) {
+    echo '<div class="product">';
+    echo '<a href="crud2.php">';
+    echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px">';
+    echo '</a>';
+    echo '<div class="details">';
+    echo '<h2 class="brand">PEAK</h2>';
+    echo '<h3 class="name">' . $product['name'] . '</h3>';
+    echo '<p class="price">' . $product['price'] . '</p>';
+    echo '</div>'; // Close details
+    echo '</div>'; // Close product
     }
     ?>
     </div>

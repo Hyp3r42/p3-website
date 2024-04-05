@@ -16,7 +16,7 @@
 </header>
 <div class="products">
 <?php
-include "connectpdo.php";
+include "config.php";
 
 
 // Define the product information
@@ -29,17 +29,21 @@ $products = [
     ["name" => "Yeezy Boost 350 V2 Yeezreel", "price" => "€260", "sizes" => [], "image" => "img yzy/1 (5).webp"],
     ["name" => "Yeezy Boost 700 V1 Faded Azure", "price" => "€349", "sizes" => [], "image" => "img yzy/1 (6).webp"],
     ["name" => "Yeezy Boost 350 V2 Core Black Red", "price" => "€250", "sizes" => [], "image" => "img yzy/1 (7).webp"],
+    ["name" => "Yeezy 450 Dark Slate", "price" => "€297", "sizes" => [], "image" => "img yzy/1 (29).webp"],
 ];
 
-// Loop through each product and generate HTML
-foreach ($products as $product) {
+  // Loop through each product and generate HTML
+  foreach ($products as $product) {
     echo '<div class="product">';
-    echo '<a href=""><img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px"></a>';
+    echo '<a href="crud2.php">';
+    echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px">';
+    echo '</a>';
+    echo '<div class="details">';
     echo '<h2 class="brand">PEAK</h2>';
     echo '<h3 class="name">' . $product['name'] . '</h3>';
     echo '<p class="price">' . $product['price'] . '</p>';
-    echo '<p class="sizes">' . implode(" ", $product['sizes']) . '</p>';
-    echo '</div>';
+    echo '</div>'; // Close details
+    echo '</div>'; // Close product
 }
 ?>
 </div>

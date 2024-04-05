@@ -4,9 +4,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="products">
-    <?php
-    include "config.php";
+<header>
+    <a href="Home page.html"><img src="./img/_5a711cdd-209d-436a-89db-4469bc09ab7f.jpeg" alt="PEAK logo" width="100"></a>
+    <nav>
+        <ul>
+            <li><a href="login.php">Inloggen</a></li>
+            <li><a href="">|</a></li>
+            <li><a href="">Klantenservice</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="products">
+<?php
+include "config.php";
     
     // Define the product information
     $products = [
@@ -21,15 +31,18 @@
         ["name" => "Nike Dunk Low EMB NBA 75th Anniversaryl", "price" => "€186", "sizes" => [], "image" => "img nike/1 (28).webp"],
     ];
 
-    // Loop through each product and generate HTML
-    foreach ($products as $product) {
-        echo '<div class="product">';
-        echo '<a href=""><img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px"></a>';
-        echo '<h2 class="brand">PEAK</h2>';
-        echo '<h3 class="name">' . $product['name'] . '</h3>';
-        echo '<p class="price">' . $product['price'] . '</p>';
-        echo '<p class="sizes">' . implode(" ", $product['sizes']) . '</p>';
-        echo '</div>';
+  // Loop through each product and generate HTML
+  foreach ($products as $product) {
+    echo '<div class="product">';
+    echo '<a href="crud2.php">';
+    echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '" height="400px" width="400px">';
+    echo '</a>';
+    echo '<div class="details">';
+    echo '<h2 class="brand">PEAK</h2>';
+    echo '<h3 class="name">' . $product['name'] . '</h3>';
+    echo '<p class="price">' . $product['price'] . '</p>';
+    echo '</div>'; // Close details
+    echo '</div>'; // Close product
     }
     ?>
     </div>
