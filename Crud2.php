@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
         KlantCode: <input type="text" name="klant_code"><br>
         ProductCode: <input type="text" name="product_code"><br>
         Aantal: <input type="number" name="aantal"><br>
+        <br>
         <input type="submit" name="create" value="Toevoegen">
     </form>
 
@@ -89,12 +90,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         ID van de bestelling: <input type="number" name="id"><br>
         Nieuw aantal: <input type="number" name="aantal"><br>
+        <br>
         <input type="submit" name="update" value="Bijwerken">
     </form>
 
     <h2>Bestelling verwijderen:</h2>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         ID van de bestelling: <input type="number" name="id"><br>
+        <br>
         <input type="submit" name="delete" value="Verwijderen">
     </form>
 </body>
