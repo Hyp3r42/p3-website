@@ -15,7 +15,8 @@
         ["name" => "Nike Dunk Low SE Copper Swoosh", "price" => "€129", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (13).webp"],
         ["name" => "Nike Dunk Low Hyper Cobalt", "price" => "€184", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img nike/1 (14).webp"],
         ["name" => "Nike SB Dunk High Green Suede", "price" => "€195", "sizes" => ["41", "42", "43", "44", "45", "46", "47"], "image" => "img nike/1 (15).webp"],
-        ["name" => "Nike Dunk Low College Navy", "price" => "€268", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (16).webp"]
+        ["name" => "Nike Dunk Low College Navy", "price" => "€268", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (16).webp"],
+        ["name" => "Nike Dunk Low College Navy", "price" => "€268", "sizes" => ["42", "43", "44", "45", "46"], "image" => "["name" => "Nike Dunk Low College Navy", "price" => "€268", "sizes" => ["42", "43", "44", "45", "46"], "image" => "img nike/1 (16).webp"]"],
     ];
 
     // Loop through each product and generate HTML
