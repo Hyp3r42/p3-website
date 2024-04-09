@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="cstyle.css">
 </head>
 <body>
 
@@ -34,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 
 <h2>Aanmelden</h2>
-<p>Nog geen account? <a href="register.php">Registreer hier</a>.</p>
+<p>Nog geen account? <a href="registeer.php">Registreer hier</a>.</p>
 
 </body>
 </html>

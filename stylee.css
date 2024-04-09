@@ -1,0 +1,22 @@
+/* CSS voor de container van het inlogformulier */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f3f3f3; /* Achtergrondkleur */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Schaduw */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* CSS voor de vorm binnen de container */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* CSS voor de achtergrond van de hele pagina */
+body {
+    background-color: #f0f0f0; /* Achtergrondkleur */
+}

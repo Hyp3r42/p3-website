@@ -1,40 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registreer</title>
-</head>
-<body>
-
 <?php
-include 'config.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "inloggen"; // Dit moet de naam van je database zijn
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Controleer gebruikersnaam en wachtwoord (hier gewoon voorbeeld, je moet dit vervangen door echte authenticatie)
-    $username = "gebruiker";
-    $password = "wachtwoord";
+    // Haal de ingediende gegevens op
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    if ($_POST["username"] == $username && $_POST["password"] == $password) {
-        echo "<h2>Welkom, $username!</h2>";
+    // Controleer of de gebruikersnaam al bestaat
+    $query = "SELECT id FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $query); // Correctie hier, gebruik $conn in plaats van $connection
+    if (mysqli_num_rows($result) > 0) {
+        echo "<h2>Deze gebruikersnaam is al in gebruik. Kies een andere.</h2>";
     } else {
-        echo "<h2>Ongeldige gebruikersnaam of wachtwoord</h2>";
+        // Voeg de nieuwe gebruiker toe aan de database
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $insert_query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
+        if (mysqli_query($conn, $insert_query)) { // Correctie hier, gebruik $conn in plaats van $connection
+            echo "<h2>Registratie succesvol. U kunt nu inloggen.</h2>";
+        } else {
+            echo "<h2>Er is een probleem opgetreden bij het registreren. Probeer het later opnieuw.</h2>";
+        }
     }
 }
 ?>
-
-<h2>Inloggen</h2>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <label for="username">Gebruikersnaam:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="password">Wachtwoord:</label><br>
-    <input type="password" id="password" name="password"><br><br>
-    <input type="submit" value="Inloggen">
-</form>
-
-<h2>Aanmelden</h2>
-<p>Nog geen account? <a href="registreren.php">Registreer hier</a>.</p>
-
-</body>
-</html>
