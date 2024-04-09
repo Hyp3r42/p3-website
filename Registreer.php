@@ -1,35 +1,63 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "inloggen"; // Dit moet de naam van je database zijn
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+    <link rel="stylesheet" type="text/css" href="stylee.css">
+</head>
+<body>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+<div class="container">
+    <h2>Registreren</h2>
+    <form action="register.php" method="post">
+        <label for="username">Gebruikersnaam:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Wachtwoord:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Registreren">
+    </form>
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    <?php
+    require_once 'config.php';
 
-// Controleer of het formulier is verzonden
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Haal de ingediende gegevens op
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Verwerk het formulier
 
-    // Controleer of de gebruikersnaam al bestaat
-    $query = "SELECT id FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $query); // Correctie hier, gebruik $conn in plaats van $connection
-    if (mysqli_num_rows($result) > 0) {
-        echo "<h2>Deze gebruikersnaam is al in gebruik. Kies een andere.</h2>";
-    } else {
-        // Voeg de nieuwe gebruiker toe aan de database
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $insert_query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
-        if (mysqli_query($conn, $insert_query)) { // Correctie hier, gebruik $conn in plaats van $connection
-            echo "<h2>Registratie succesvol. U kunt nu inloggen.</h2>";
+        // Controleer of gebruikersnaam en wachtwoord zijn ingevuld
+        if (!empty($_POST["username"]) && !empty($_POST["password"])) {
+            // Verbind met de database
+            require_once 'config.php';
+
+            // Ontvang de ingevulde gegevens van het formulier
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+
+            // Controleer of de gebruikersnaam al bestaat
+            $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ?");
+            $stmt->execute([$username]);
+            $user = $stmt->fetch();
+
+            if ($user) {
+                echo "<p>Gebruikersnaam is al in gebruik. Kies een andere.</p>";
+            } else {
+                // Hash het wachtwoord
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                // Voeg de nieuwe gebruiker toe aan de database
+                $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+                if ($stmt->execute([$username, $hashed_password])) {
+                    echo "<p>Registratie succesvol! U kunt nu <a href='login.php'>inloggen</a>.</p>";
+                } else {
+                    echo "<p>Er is een probleem opgetreden bij het registreren. Probeer het later opnieuw.</p>";
+                }
+            }
         } else {
-            echo "<h2>Er is een probleem opgetreden bij het registreren. Probeer het later opnieuw.</h2>";
+            echo "<p>Vul alstublieft zowel gebruikersnaam als wachtwoord in.</p>";
         }
     }
-}
-?>
+    ?>
+</div>
+
+</body>
+</html>

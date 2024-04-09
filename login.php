@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="cstyle.css">
+    <link rel="stylesheet" type="text/css" href="stylee.css">
 </head>
 <body>
 
@@ -25,17 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<h2>Inloggen</h2>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <label for="username">Gebruikersnaam:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="password">Wachtwoord:</label><br>
-    <input type="password" id="password" name="password"><br><br>
-    <input type="submit" value="Inloggen">
-</form>
-
-<h2>Aanmelden</h2>
-<p>Nog geen account? <a href="registeer.php">Registreer hier</a>.</p>
+<div class="container">
+    <h1>Inloggen</h1>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <h2>Vul uw gegevens in</h2>
+        <label for="username">Gebruikersnaam:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Wachtwoord:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Inloggen">
+    </form>
+    <h2>Aanmelden</h2>
+    <p>Nog geen account? <a href="Registreer.php">Registreer hier</a>.</p>
+</div>
 
 </body>
 </html>
