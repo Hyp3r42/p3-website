@@ -13,13 +13,21 @@ include "config.php";
 
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Controleer gebruikersnaam en wachtwoord (hier gewoon voorbeeld, je moet dit vervangen door echte authenticatie)
-    $username = "gebruiker";
-    $password = "wachtwoord";
+    // Ontvang gebruikersnaam en wachtwoord uit het formulier
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    if ($_POST["username"] == $username && $_POST["password"] == $password) {
-        echo "<h2>Welkom, $username!</h2>";
+    // Zoek de gebruiker in de database
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        // Gebruiker gevonden en wachtwoord is correct
+        header("Location: Home page.html");
+        exit; // Zorg ervoor dat het script hier stopt om door te gaan met de redirect
     } else {
+        // Gebruiker niet gevonden of wachtwoord is onjuist
         echo "<h2>Ongeldige gebruikersnaam of wachtwoord</h2>";
     }
 }

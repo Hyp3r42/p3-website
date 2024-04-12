@@ -11,7 +11,16 @@
     <ul>
         <?php if (!empty($klanten)): ?>
             <?php foreach ($klanten as $klant): ?>
-                <li><?php echo $klant["naam"]; ?> (<?php echo $klant["email"]; ?>)</li>
+                <li><?php echo $klant["naam"]; ?> (<?php echo $klant["email"]; ?>) 
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display:inline;">
+                        <input type="hidden" name="klant_id" value="<?php echo $klant["id"]; ?>">
+                        <input type="submit" name="update_klant" value="Wijzigen">
+                    </form>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display:inline;">
+                        <input type="hidden" name="klant_id" value="<?php echo $klant["id"]; ?>">
+                        <input type="submit" name="delete_klant" value="Verwijderen">
+                    </form>
+                </li>
             <?php endforeach; ?>
         <?php else: ?>
             <li>Geen klanten gevonden</li>
@@ -19,16 +28,24 @@
     </ul>
 
     <h2>Producten</h2>
-<ul>
-    <?php if (!empty($producten)): ?>
-        <?php foreach ($producten as $product): ?>
-            <li><?php echo $product["naam"]; ?> - €<?php echo $product["prijs"]; ?></li>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <li>Geen producten gevonden</li>
-    <?php endif; ?>
-</ul>
-
+    <ul>
+        <?php if (!empty($producten)): ?>
+            <?php foreach ($producten as $product): ?>
+                <li><?php echo $product["naam"]; ?> - €<?php echo $product["prijs"]; ?>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display:inline;">
+                        <input type="hidden" name="product_id" value="<?php echo $product["id"]; ?>">
+                        <input type="submit" name="update_product" value="Wijzigen">
+                    </form>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display:inline;">
+                        <input type="hidden" name="product_id" value="<?php echo $product["id"]; ?>">
+                        <input type="submit" name="delete_product" value="Verwijderen">
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>Geen producten gevonden</li>
+        <?php endif; ?>
+    </ul>
 
     <h2>Voeg Klant Toe</h2>
     <form method="post">
