@@ -1,6 +1,6 @@
 <?php
     // functie: formulier en database insert bestelling
-    // auteur: Talha
+    // auteur: Dmahn
 
     echo "<h1>Insert bestelling</h1>";
 
@@ -19,7 +19,7 @@
     }
 ?>
 <html>
-<link rel="stylesheet" href="opmaak.css">
+<link rel="stylesheet" href="style.css">
     <body>
         <form method="post">
 
@@ -42,6 +42,6 @@
         </form>
         
         <br><br>
-        <a href='crud_bestelling.php'>Home</a>
+        <a href='crud_producten.php'>Home</a>
     </body>
 </html>

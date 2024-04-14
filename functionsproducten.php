@@ -1,5 +1,5 @@
 <?php
-// auteur: Talha
+// auteur: D.mahn
 // functie: algemene functies tbv hergebruik
  
 include_once "configp.php";
@@ -194,6 +194,14 @@ function insertbestelling($post){
     // Maak database connectie
     $conn = connectDb();
  
+    // Controleer op duplicaat productcode
+    $existingOrder = getbestelling($_POST['productcode']);
+    if($existingOrder) {
+        // Als er al een bestelling bestaat met dezelfde productcode, geef een foutmelding
+        echo "Fout: Er bestaat al een bestelling met deze productcode.";
+        return false;
+    }
+
     // Maak een query
     $sql = "
         INSERT INTO " . CRUD_TABLE . " (productcode, naam, merk)
@@ -209,11 +217,11 @@ function insertbestelling($post){
         ':merk'=>$_POST['merk'],
     ]);
  
-   
     // test of database actie is gelukt
     $retVal = ($stmt->rowCount() == 1) ? true : false ;
     return $retVal;  
 }
+
  
 function deletebestelling($bestelcode){
  
