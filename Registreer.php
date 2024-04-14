@@ -10,7 +10,7 @@
 
 <div class="container">
     <h2>Registreren</h2>
-    <form action="register.php" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label for="username">Gebruikersnaam:</label><br>
         <input type="text" id="username" name="username" required><br>
         <label for="password">Wachtwoord:</label><br>
@@ -27,7 +27,8 @@
         // Controleer of gebruikersnaam en wachtwoord zijn ingevuld
         if (!empty($_POST["username"]) && !empty($_POST["password"])) {
             // Verbind met de database
-            require_once 'config.php';
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Ontvang de ingevulde gegevens van het formulier
             $username = $_POST["username"];
