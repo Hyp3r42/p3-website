@@ -1,5 +1,5 @@
 <?php
-// auteur: D.Mahn
+// auteur: Talha
 // functie: verwijder een bestelling op basis van de bestelcode
 include 'functionsproducten.php';
 
