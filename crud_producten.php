@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <?php
     // functie: Programma CRUD bestelling
     // auteur: Talha

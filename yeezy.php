@@ -16,7 +16,7 @@
 </header>
 <div class="products">
 <?php
-include "config.php";
+include "configp.php";
 
 
 // Define the product information

@@ -9,7 +9,7 @@
 <body>
 
 <?php
-include "config.php";
+include "configp.php";
 
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

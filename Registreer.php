@@ -19,7 +19,7 @@
     </form>
 
     <?php
-    require_once 'config.php';
+    require_once 'configp.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verwerk het formulier
