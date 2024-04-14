@@ -1,6 +1,6 @@
 <?php
     // functie: formulier en database insert bestelling
-    // auteur: Talha
+    // auteur: Dmahn
 
     echo "<h1>Insert bestelling</h1>";
 

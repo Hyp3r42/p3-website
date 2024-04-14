@@ -1,5 +1,5 @@
 <?php
-// auteur: Talha
+// auteur: D.mahn
 // functie: algemene functies tbv hergebruik
  
 include_once "configp.php";
