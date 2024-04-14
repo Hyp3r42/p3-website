@@ -27,9 +27,6 @@ $products = [
     ["name" => "Yeezy Boost 700 V1 Wave Runner", "price" => "€497", "sizes" => [], "image" => "img yzy/1 (3).webp"],
     ["name" => "Yeezy Foam RNNR Stone Stage", "price" => "€257", "sizes" => [], "image" => "img yzy/1 (4).webp"],
     ["name" => "Yeezy Boost 350 V2 Yeezreel", "price" => "€260", "sizes" => [], "image" => "img yzy/1 (5).webp"],
-    ["name" => "Yeezy Boost 700 V1 Faded Azure", "price" => "€349", "sizes" => [], "image" => "img yzy/1 (6).webp"],
-    ["name" => "Yeezy Boost 350 V2 Core Black Red", "price" => "€250", "sizes" => [], "image" => "img yzy/1 (7).webp"],
-    ["name" => "Yeezy 450 Dark Slate", "price" => "€297", "sizes" => [], "image" => "img yzy/1 (29).webp"],
 ];
 
   // Loop through each product and generate HTML

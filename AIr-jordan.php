@@ -26,9 +26,6 @@
         ["name" => "Air Jordan 1 Low Reverse Bred", "price" => "€126", "sizes" => [], "image" => "img air jordan/1 (22).webp"],
         ["name" => "Air Jordan 1 Retro High Light Smoke Grey", "price" => "€250", "sizes" => [], "image" => "img air jordan/1 (23).webp"],
         ["name" => "Air Jordan 1 Retro High OG Yellow Toe", "price" => "€220", "sizes" => [], "image" => "img air jordan/1 (24).webp"],
-        ["name" => "Air Jordan 1 Mid Mulit Patent", "price" => "€349", "sizes" => [], "image" => "img air jordan/1 (25).webp"],
-        ["name" => "Air Jordan 1 Retro Hight Royal Toe", "price" => "€297", "sizes" => [], "image" => "img air jordan/1 (26).webp"],
-        ["name" => "Air Jordan 7 Retro Greater China", "price" => "€204", "sizes" => [], "image" => "img air jordan/1 (27).webp"],
     ];
 
   // Loop through each product and generate HTML
