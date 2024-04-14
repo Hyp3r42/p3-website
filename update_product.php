@@ -45,9 +45,6 @@
         <label for="merk">merk:</label>
         <input type="merk" bestelcode="merk" name="merk" required><br>
 
-        <label for="prijs">prijs:</label>
-        <input type="prijs" bestelcode="prijs" name="prijs" required><br>
-
     <input type="submit" name="btn_wzg" value="Wijzig">
   </form>
   <br><br>
