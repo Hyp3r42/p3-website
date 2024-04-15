@@ -29,8 +29,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Wijzig bestelling</title>
+<<<<<<< HEAD
   <link rel="stylesheet" href="sstyle.css">
-</head>
 <body>
   <h2>Wijzig bestelling</h2>
   <form method="post">
@@ -49,6 +49,12 @@
         
     <label for="foto">foto:</label>
     <input type="text" name="foto" value="<?php echo $row['foto/img nike']; ?>" required><br>
+
+        <label for="prijs">prijs:</label>
+        <input type="prijs" bestelcode="prijs" name="prijs" required><br>
+        
+        <label for="foto">foto:</label>
+        <input type="foto" bestelcode="foto" name="foto" required><br>
 
     <input type="submit" name="btn_wzg" value="Wijzig">
   </form>
