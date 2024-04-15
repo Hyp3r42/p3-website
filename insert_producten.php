@@ -12,36 +12,37 @@
 
         // Test of de insert gelukt is
         if(insertbestelling($_POST) == true){
-            echo "<script>alert('bestelling is toegevoegd')</script>";
+            echo "<script>alert('Bestelling is toegevoegd')</script>";
         } else {
-            echo '<script>alert("bestelling is NIET toegevoegd")</script>';
+            echo '<script>alert("Fout bij het toevoegen van de bestelling")</script>';
         }
     }
 ?>
-<html>
-<link rel="stylesheet" href="style.css">
-    <body>
-        <form method="post">
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert bestelling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form method="post">
+        <label for="productcode">Productcode:</label>
+        <input type="text" name="productcode" required><br>
 
-        <label for="productcode">productcode:</label>
-        <input type="text" bestelcode="productcode" name="productcode" required><br>
+        <label for="naam">Naam:</label>
+        <input type="text" name="naam" required><br>
 
-        <label for="naam">naam:</label>
-        <input type="text" bestelcode="naam" name="naam" required><br>
+        <label for="merk">Merk:</label>
+        <input type="text" name="merk" required><br>
 
-        <label for="merk">merk:</label>
-        <input type="merk" bestelcode="merk" name="merk" required><br>
-
-        <label for="prijs">prijs:</label>
-        <input type="prijs" bestelcode="prijs" name="prijs" required><br>
-        
-        <label for="foto">foto:</label>
-        <input type="foto" bestelcode="foto" name="foto" required><br>
-
-  <input type="submit" name="btn_ins" value="Insert">
-        </form>
-        
-        <br><br>
-        <a href='crud_producten.php'>Home</a>
-    </body>
+        <label for="prijs">Prijs:</label>
+        <input type="text" name="prijs" required><br>
+        <input type="submit" name="btn_ins" value="Insert">
+    </form>
+    
+    <br><br>
+    <a href='crud_producten.php'>Home</a>
+</body>
 </html>
