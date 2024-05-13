@@ -161,34 +161,40 @@ function printCrudbestelling($result){
 }
 
  
-function updatebestelling($row){
- 
+function updatebestelling($productcode, $naam, $merk, $prijs){
     // Maak database connectie
     $conn = connectDb();
  
-    // Maak een query
-    $sql = "UPDATE " . CRUD_TABLE .
-    " SET
-        productcode = :productcode,
-        naam = :naam,
-        merk = :merk
-    WHERE productcode = :productcode
-    ";
- 
-    // Prepare query
-    $stmt = $conn->prepare($sql);
-    // Uitvoeren
-    $stmt->execute([
-        ':productcode'=>$row['productcode'],
-        ':naam'=>$row['naam'],
-        ':merk'=>$row['merk'],
-        ':productcode'=>intval($row['productcode']) // Convert to integer
-    ]);
- 
-    // test of database actie is gelukt
-    $retVal = ($stmt->rowCount() == 1) ? true : false ;
-    return $retVal;
+    try {
+        // Maak een query
+        $sql = "UPDATE " . CRUD_TABLE .
+        " SET
+            naam = :naam,
+            merk = :merk,
+            prijs = :prijs
+        WHERE productcode = :productcode
+        ";
+     
+        // Prepare query
+        $stmt = $conn->prepare($sql);
+        // Uitvoeren
+        $stmt->execute([
+            ':productcode' => $productcode,
+            ':naam' => $naam,
+            ':merk' => $merk,
+            ':prijs' => $prijs
+        ]);
+     
+        // test of database actie is gelukt
+        $retVal = ($stmt->rowCount() == 1) ? true : false ;
+        return $retVal;
+    } catch (PDOException $e) {
+        // Geef de specifieke foutmelding weer
+        echo "Fout bij het wijzigen van de bestelling: " . $e->getMessage();
+        return false;
+    }
 }
+
  
 function insertbestelling($post){
     // Maak database connectie

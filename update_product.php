@@ -11,9 +11,9 @@ if(isset($_POST['btn_wzg'])){
     $naam = $_POST['naam'];
     $merk = $_POST['merk'];
     $prijs = $_POST['prijs'];
-echo
+
     // Test of update gelukt is
-    if(updatebestelling('productcode', 'naam', 'merk', 'prijs',)){
+    if(updatebestelling($productcode, $naam, $merk, $prijs)){
         echo "<script>alert('Bestelling is gewijzigd')</script>";
     } else {
         echo '<script>alert("Fout bij het wijzigen van de bestelling. Controleer uw invoer en probeer het opnieuw.")</script>';
@@ -23,8 +23,8 @@ echo
 // Test of bestelcode is meegegeven in de URL
 if(isset($_GET['productcode'])){  
     // Haal alle info van de betreffende bestelcode $_GET['bestelcode']
-    $bestelcode = $_GET['productcode'];
-    $row = getbestelling($bestelcode);
+    $productcode = $_GET['productcode'];
+    $row = getbestelling($productcode);
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +32,8 @@ if(isset($_GET['productcode'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Wijzig bestelling</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sstyle.css">
 </head>
 <body>
@@ -60,6 +60,6 @@ if(isset($_GET['productcode'])){
 
 <?php
 } else {
-    echo "Geen bestelcode opgegeven<br>";
+    echo "Geen productcode opgegeven<br>";
 }
 ?>
