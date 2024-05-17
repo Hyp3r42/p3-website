@@ -9,7 +9,7 @@
 <body>
 
 <?php
-include "configp.php";
+include "configi.php";
 
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,18 +18,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Zoek de gebruiker in de database
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($user && password_verify($password, $user['password'])) {
-        // Gebruiker gevonden en wachtwoord is correct
-        header("Location: Home page.html");
-        exit; // Zorg ervoor dat het script hier stopt om door te gaan met de redirect
+    if ($result->num_rows == 1) {
+        // Gebruiker gevonden, controleer het wachtwoord
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password'])) {
+            // Wachtwoord is correct, doorsturen naar de homepagina
+            header("Location: Home page.html");
+            exit; // Zorg ervoor dat het script hier stopt om door te gaan met de redirect
+        } else {
+            // Wachtwoord is onjuist
+            echo "<h2>Ongeldige gebruikersnaam of wachtwoord</h2>";
+        }
     } else {
-        // Gebruiker niet gevonden of wachtwoord is onjuist
+        // Gebruiker niet gevonden
         echo "<h2>Ongeldige gebruikersnaam of wachtwoord</h2>";
     }
+
+    $stmt->close();
 }
 ?>
 

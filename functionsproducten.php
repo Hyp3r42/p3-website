@@ -1,207 +1,193 @@
 <?php
-// auteur: Talha
-// functie: algemene functies tbv hergebruik
- 
 include_once "configp.php";
- 
+
 function connectDb(){
     $servername = SERVERNAME;
     $username = USERNAME;
     $password = PASSWORD;
     $dbname = DATABASE;
-   
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        //echo "Connected successfully";
-        return $conn;
+
+    // Maak verbinding met de database
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Controleer de verbinding
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-    catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
- 
+
+    return $conn;
 }
- 
-// selecteer de data uit de opgeven table
+
+// Selecteer de data uit de opgegeven tabel
 function getData($table){
     // Connect database
     $conn = connectDb();
  
-    // Select data uit de opgegeven table methode prepare
+    // Select data uit de opgegeven tabel
     $sql = "SELECT * FROM $table";
-    $query = $conn->prepare($sql);
-    $query->execute();
-    $result = $query->fetchAll();
+    $result = $conn->query($sql);
  
-    return $result;
+    // Controleer of de query is gelukt
+    if ($result === false) {
+        die("Error fetching data: " . $conn->error);
+    }
+ 
+    // Haal de resultaten op
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+ 
+    // Sluit de verbinding
+    $conn->close();
+ 
+    return $data;
 }
- 
-function getbestelling($bestelcode){
+
+// Haal de bestelling op aan de hand van de productcode
+function getBestelling($bestelcode){
     // Connect database
     $conn = connectDb();
  
-    // Select data uit de opgegeven table methode prepare
-    $sql = "SELECT * FROM " . CRUD_TABLE . " WHERE productcode = :productcode";
-    $query = $conn->prepare($sql);
-    $query->execute([':productcode' => $bestelcode]); // Use $bestelcode here
-    $result = $query->fetch();
+    // Selecteer data uit de tabel aan de hand van de productcode
+    $sql = "SELECT * FROM " . CRUD_TABLE . " WHERE productcode = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $bestelcode);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
+ 
+    // Sluit de verbinding
+    $stmt->close();
+    $conn->close();
  
     return $result;
 }
 
- 
-function ovzbestelling(){
- 
-    // Haal alle bestelling record uit de tabel
+// Toon een overzicht van de bestellingen
+function overzichtBestellingen(){
+    // Haal alle bestellingen op
     $result = getData(CRUD_TABLE);
    
-    //print table
-    printTable($result);
-   
+    // Print de tabel
+    printTabel($result);
 }
- 
- 
-// Function 'PrintTable' print een HTML-table met data uit $result.
-function printTable($result){
-    // Zet de hele table in een variable $table en print hem 1 keer
-    $table = "<table>";
- 
-    // Print header table
- 
-    // haal de kolommen uit de eerste [0] van het array $result mbv array_keys
-    $headers = array_keys($result[0]);
-    $table .= "<tr>";
+
+// Print een HTML-tabel met de gegeven data
+function printTabel($data){
+    // Controleer of de data leeg is
+    if(empty($data)) {
+        echo "Geen data beschikbaar";
+        return;
+    }
+
+    // Print de header van de tabel
+    $headers = array_keys($data[0]);
+    echo "<table>";
+    echo "<tr>";
     foreach($headers as $header){
-        $table .= "<th>" . $header . "</th>";  
+        echo "<th>" . $header . "</th>";
     }
- 
-    // print elke rij van de tabel
-    foreach ($result as $row) {
-       
-        $table .= "<tr>";
-        // print elke kolom
+    echo "</tr>";
+
+    // Print de rijen van de tabel
+    foreach ($data as $row) {
+        echo "<tr>";
         foreach ($row as $cell) {
-            $table .= "<td>" . $cell . "</td>";
+            echo "<td>" . $cell . "</td>";
         }
-        $table .= "</tr>";
+        echo "</tr>";
     }
-    $table.= "</table>";
- 
-    echo $table;
+    echo "</table>";
 }
- 
- 
-function crudbestelling(){
- 
-    // Menu-item   insert
+
+// Toon een CRUD-overzicht van de bestellingen
+function crudBestelling(){
+    // Menu-item insert
     $txt = "
-    <h1>Crud bestelling</h1>
+    <h1>CRUD Bestellingen</h1>
     <nav>
         <a href='insert_producten.php'>Toevoegen nieuwe bestelling</a>
     </nav><br>";
     echo $txt;
- 
-    // Haal alle bestelling record uit de tabel
+
+    // Haal alle bestellingen op
     $result = getData(CRUD_TABLE);
- 
-    //print table
-    printCrudbestelling($result);
-   
+
+    // Print de tabel
+    printCrudBestelling($result);
 }
-function printCrudbestelling($result){
-    // Check if $result is empty or null
+
+// Print een CRUD-tabel van de bestellingen
+function printCrudBestelling($result){
+    // Controleer of er data is
     if(empty($result)) {
-        echo "No data available";
+        echo "Geen data beschikbaar";
         return;
     }
 
-    // Proceed with printing table if $result is not empty
-    // Zet de hele table in een variable en print hem 1 keer
-    $table = "<table>";
-
-    // Print header table
-    // haal de kolommen uit de eerste rij [0] van het array $result mbv array_keys
+    // Print de tabel
+    echo "<table>";
+    // Print de header van de tabel
     $headers = array_keys($result[0]);
-    $table .= "<tr>";
+    echo "<tr>";
     foreach($headers as $header){
-        $table .= "<th>" . $header . "</th>";
+        echo "<th>" . $header . "</th>";
     }
-    // Voeg actie kopregel toe
-    $table .= "<th colspan=2>Actie</th>";
-    $table .= "</th>";
+    echo "<th colspan=2>Actie</th>";
+    echo "</tr>";
 
-    // print elke rij
+    // Print de rijen van de tabel
     foreach ($result as $row) {
-
-        $table .= "<tr>";
-        // print elke kolom
+        echo "<tr>";
         foreach ($row as $cell) {
-            $table .= "<td>" . $cell . "</td>";
+            echo "<td>" . $cell . "</td>";
         }
 
         // Wijzig knopje
-        $table .= "<td>
-            <form method='post' action='update_product.php?productcode=$row[productcode]' >      
+        echo "<td>
+            <form method='post' action='update_product.php?productcode={$row['productcode']}' >      
                 <button>Wzg</button>    
             </form></td>";
 
-        // Delete knopje
-        $table .= "<td>
-            <form method='post' action='delete_producten.php?productcode=$row[productcode]' >      
+        // Verwijder knopje
+        echo "<td>
+            <form method='post' action='delete_producten.php?productcode={$row['productcode']}' >      
                 <button>Verwijder</button>  
             </form></td>";
 
-        $table .= "</tr>";
+        echo "</tr>";
     }
-    $table.= "</table>";
-
-    echo $table;
+    echo "</table>";
 }
 
- 
-function updatebestelling($productcode, $naam, $merk, $prijs){
+// Werk een bestelling bij
+function updateBestelling($productcode, $naam, $merk, $prijs){
     // Maak database connectie
     $conn = connectDb();
  
-    try {
-        // Maak een query
-        $sql = "UPDATE " . CRUD_TABLE .
-        " SET
-            naam = :naam,
-            merk = :merk,
-            prijs = :prijs
-        WHERE productcode = :productcode
-        ";
-     
-        // Prepare query
-        $stmt = $conn->prepare($sql);
-        // Uitvoeren
-        $stmt->execute([
-            ':productcode' => $productcode,
-            ':naam' => $naam,
-            ':merk' => $merk,
-            ':prijs' => $prijs
-        ]);
-     
-        // test of database actie is gelukt
-        $retVal = ($stmt->rowCount() == 1) ? true : false ;
-        return $retVal;
-    } catch (PDOException $e) {
-        // Geef de specifieke foutmelding weer
-        echo "Fout bij het wijzigen van de bestelling: " . $e->getMessage();
-        return false;
-    }
+    // Maak een query
+    $sql = "UPDATE " . CRUD_TABLE . " SET naam = ?, merk = ?, prijs = ? WHERE productcode = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssds", $naam, $merk, $prijs, $productcode);
+    $stmt->execute();
+ 
+    // Test of de database actie is gelukt
+    $retVal = ($stmt->affected_rows == 1) ? true : false ;
+ 
+    // Sluit de verbinding
+    $stmt->close();
+    $conn->close();
+ 
+    return $retVal;
 }
 
- 
-function insertbestelling($post){
+// Voeg een nieuwe bestelling toe
+function insertBestelling($post){
     // Maak database connectie
     $conn = connectDb();
  
     // Controleer op duplicaat productcode
-    $existingOrder = getbestelling($_POST['productcode']);
+    $existingOrder = getBestelling($_POST['productcode']);
     if($existingOrder) {
         // Als er al een bestelling bestaat met dezelfde productcode, geef een foutmelding
         echo "Fout: Er bestaat al een bestelling met deze productcode.";
@@ -209,47 +195,39 @@ function insertbestelling($post){
     }
 
     // Maak een query
-    $sql = "
-        INSERT INTO " . CRUD_TABLE . " (productcode, naam, merk)
-        VALUES (:productcode, :naam, :merk)
-    ";
- 
-    // Prepare query
+    $sql = "INSERT INTO " . CRUD_TABLE . " (productcode, naam, merk) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    // Uitvoeren
-    $stmt->execute([
-        ':productcode'=>$_POST['productcode'],
-        ':naam'=>$_POST['naam'],
-        ':merk'=>$_POST['merk'],
-    ]);
+    $stmt->bind_param("sss", $_POST['productcode'], $_POST['naam'], $_POST['merk']);
+    $stmt->execute();
  
-    // test of database actie is gelukt
-    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    // Test of de database actie is gelukt
+    $retVal = ($stmt->affected_rows == 1) ? true : false ;
+ 
+    // Sluit de verbinding
+    $stmt->close();
+    $conn->close();
+ 
     return $retVal;  
 }
 
- 
-function deletebestelling($bestelcode){
- 
-    // Connect database
+// Verwijder een bestelling
+function deleteBestelling($bestelcode){
+    // Maak database connectie
     $conn = connectDb();
    
     // Maak een query
-    $sql = "
-    DELETE FROM " . CRUD_TABLE .
-    " WHERE productcode = :productcode";
- 
-    // Prepare query
+    $sql = "DELETE FROM " . CRUD_TABLE . " WHERE productcode = ?";
     $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $_GET['productcode']);
+    $stmt->execute();
  
-    // Uitvoeren
-    $stmt->execute([
-    ':productcode'=>$_GET['productcode']
-    ]);
+    // Test of de database actie is gelukt
+    $retVal = ($stmt->affected_rows == 1) ? true : false ;
  
-    // test of database actie is gelukt
-    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    // Sluit de verbinding
+    $stmt->close();
+    $conn->close();
+ 
     return $retVal;
 }
- 
 ?>
