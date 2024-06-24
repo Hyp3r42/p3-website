@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEAK</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function filterShoes() {
+            var input = document.getElementById('searchShoe').value.toLowerCase();
+            var yeezy = document.getElementById('yeezy');
+            var nike = document.getElementById('nike');
+            var airJordan = document.getElementById('air-jordan');
+            
+            if (input === 'yeezy') {
+                yeezy.style.display = 'block';
+                nike.style.display = 'none';
+                airJordan.style.display = 'none';
+            } else if (input === 'nike') {
+                yeezy.style.display = 'none';
+                nike.style.display = 'block';
+                airJordan.style.display = 'none';
+            } else if (input === 'air-jordan') {
+                yeezy.style.display = 'none';
+                nike.style.display = 'none';
+                airJordan.style.display = 'block';
+            } else {
+                yeezy.style.display = 'block';
+                nike.style.display = 'block';
+                airJordan.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -17,8 +43,20 @@
             </ul>
         </nav>
     </header>
-    <a href="yeezy.php"><img src="img/yeezy.webp" alt="Yeezy logo" width="618" height="650"></a>    
-    <a href="Nike.php"><img src="img/nike.webp" alt="Nike logo" width="618" height="650"></a>
-    <a href="Air-jordan.php"><img src="img/air-jordan.webp" alt="Air-jordan logo" width="618" height="650"></a>
+
+    <form onsubmit="filterShoes(); return false;">
+        <label for="searchShoe">Zoek schoen:</label>
+        <input list="shoes" id="searchShoe" name="searchShoe">
+        <datalist id="shoes">
+            <option value="Yeezy">
+            <option value="Air-jordan">
+            <option value="Nike">
+        </datalist>
+        <button type="submit">Filter</button>
+    </form>
+
+    <a id="yeezy" href="yeezy.php"><img src="img/yeezy.webp" alt="Yeezy logo" width="618" height="650"></a>    
+    <a id="nike" href="Nike.php"><img src="img/nike.webp" alt="Nike logo" width="618" height="650"></a>
+    <a id="air-jordan" href="Air-jordan.php"><img src="img/air-jordan.webp" alt="Air-jordan logo" width="618" height="650"></a>
 </body>
 </html>
